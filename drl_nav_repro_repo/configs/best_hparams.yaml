@@ -1,0 +1,50 @@
+# Best hyperparameters reported in the paper (Optuna-selected)
+# Table: "Hyperparameters selected by Optuna for each algorithm"
+
+PPO:
+  learning_rate: 5.13e-4
+  batch_size: 256
+  gamma: 0.990
+  n_steps: 1024
+  clip_range: 0.225
+  gae_lambda: 0.985
+  # cosine schedule used in the final PPO ablation baseline
+  lr_schedule: cosine
+
+SAC:
+  learning_rate: 5.0e-4
+  batch_size: 512
+  gamma: 0.999
+  tau: 0.0343
+  train_freq: 10
+  gradient_steps: 5
+  ent_coef: 0.0066
+  buffer_size: 10000
+  learning_starts: 1000
+  target_update_interval: 5
+
+A2C:
+  learning_rate: 6.88e-4
+  gamma: 0.913
+  n_steps: 10
+  gae_lambda: 0.966
+  ent_coef: 0.00597
+  vf_coef: 0.484
+  max_grad_norm: 0.898
+
+TD3:
+  learning_rate: 2.93e-4
+  batch_size: 256
+  gamma: 0.972
+  tau: 0.0454
+  train_freq: 10
+  gradient_steps: -1
+  policy_delay: 2
+
+DDPG:
+  learning_rate: 4.5e-5
+  batch_size: 128
+  gamma: 0.924
+  tau: 0.0168
+  train_freq: 1
+  gradient_steps: 10

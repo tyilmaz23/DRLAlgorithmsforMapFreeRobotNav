@@ -1,0 +1,15 @@
+# Core
+numpy>=1.24
+scipy>=1.10
+pyyaml>=6.0
+matplotlib>=3.8
+
+# RL
+gymnasium>=0.29
+stable-baselines3>=2.2
+
+# HPO
+optuna>=3.5
+
+# Utils
+tqdm>=4.66

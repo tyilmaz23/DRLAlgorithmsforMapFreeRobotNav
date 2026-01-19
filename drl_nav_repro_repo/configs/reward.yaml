@@ -1,0 +1,16 @@
+# Reward weights (paper Table: reward coefficients)
+r_goal: 1.0
+r_collision: -1.0
+r_timeout: -0.6
+
+kappa_d: 6.0e-4
+kappa_s: 3.5e-4
+kappa_v: 2.2e-4
+kappa_w: 1.8e-4
+
+beta_dd: 4.0e-4
+# paper states tuned in [1e-4, 1e-3]
+beta_path: 5.0e-4
+
+d_th: 0.25
+kappa_p: 3.0e-4

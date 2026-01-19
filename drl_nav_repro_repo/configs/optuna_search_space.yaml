@@ -1,0 +1,100 @@
+# Example Optuna search spaces used by scripts/optuna_tune.py
+# Adjust ranges if your original study used different bounds.
+
+common:
+  learning_rate:
+    type: loguniform
+    low: 1.0e-5
+    high: 1.0e-3
+  gamma:
+    type: uniform
+    low: 0.90
+    high: 0.999
+
+PPO:
+  batch_size:
+    type: categorical
+    choices: [64, 128, 256, 512]
+  n_steps:
+    type: categorical
+    choices: [256, 512, 1024, 2048]
+  clip_range:
+    type: uniform
+    low: 0.1
+    high: 0.3
+  gae_lambda:
+    type: uniform
+    low: 0.90
+    high: 0.99
+
+A2C:
+  n_steps:
+    type: categorical
+    choices: [5, 10, 20, 50]
+  gae_lambda:
+    type: uniform
+    low: 0.90
+    high: 0.99
+  ent_coef:
+    type: loguniform
+    low: 1.0e-4
+    high: 1.0e-2
+  vf_coef:
+    type: uniform
+    low: 0.1
+    high: 1.0
+
+SAC:
+  batch_size:
+    type: categorical
+    choices: [128, 256, 512, 1024]
+  tau:
+    type: uniform
+    low: 0.005
+    high: 0.05
+  train_freq:
+    type: categorical
+    choices: [1, 4, 8, 10, 16]
+  gradient_steps:
+    type: categorical
+    choices: [1, 2, 5, 10]
+  ent_coef:
+    type: loguniform
+    low: 1.0e-4
+    high: 1.0e-1
+  buffer_size:
+    type: categorical
+    choices: [10000, 50000, 100000]
+
+TD3:
+  batch_size:
+    type: categorical
+    choices: [64, 128, 256, 512]
+  tau:
+    type: uniform
+    low: 0.005
+    high: 0.06
+  train_freq:
+    type: categorical
+    choices: [1, 2, 4, 8, 10]
+  gradient_steps:
+    type: categorical
+    choices: [-1, 1, 2, 5]
+  policy_delay:
+    type: categorical
+    choices: [1, 2, 3]
+
+DDPG:
+  batch_size:
+    type: categorical
+    choices: [64, 128, 256, 512]
+  tau:
+    type: uniform
+    low: 0.005
+    high: 0.05
+  train_freq:
+    type: categorical
+    choices: [1, 2, 4]
+  gradient_steps:
+    type: categorical
+    choices: [1, 5, 10]
